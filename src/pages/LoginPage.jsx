@@ -6,6 +6,7 @@ const LoginPage = () => {
   const {logedIn,setLogedIn,users} =useAppContext();
   const [email,setEmail] = useState("");
   const [password,setPass] = useState("");
+  const navigate = useNavigate();
  
 
   const login = () => {
@@ -16,9 +17,12 @@ const LoginPage = () => {
 
     if(output){
       alert("success")
+      setLogedIn(true);
+      navigate('/');
     }else{
       alert("fail")
       setLogedIn(false);
+      
     }
     
     
