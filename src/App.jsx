@@ -3,6 +3,7 @@ import Context from './context/Context'
 import HomePage from './pages/HomePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
+import SignUp from './pages/SignUp'
 
 const App = () => {
 
@@ -15,7 +16,11 @@ const App = () => {
     {
       path:'/login',
       element:<LoginPage/>
-    }
+    },
+    {
+      path:'/signup',
+      element:<SignUp/>
+    },
 
   ]);
   
