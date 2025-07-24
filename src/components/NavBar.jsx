@@ -9,18 +9,18 @@ const {logedIn,setLogedIn} =useAppContext();
 
 
   return (
-    <div className='flex fixed bg-blue-200 w-screen h-25 justify-between items-center'>
-        <img src={logo} className='w-20 ms-15' />
-        <div className='flex gap-20 text-2xl'>
-            <NavLink to={'/'}>Home</NavLink>
-            <NavLink to={'/'}>Quizes</NavLink>
-            <NavLink to={'/'}>About</NavLink>
+    <div className='flex fixed bg-blue-200 w-screen h-35 justify-between items-center shadow-lg'>
+        <img src={logo} className='w-35 ms-15' />
+        <div className='flex gap-20 text-3xl text-blue-950 changareg text-shadow-lg '>
+            <NavLink to={'/'} className='hover:text-blue-800'>Home</NavLink>
+            <NavLink to={'/'} className='hover:text-blue-800'>Quizes</NavLink>
+            <NavLink to={'/'} className='hover:text-blue-800'>About</NavLink>
 
         </div>
 
-        <div>
-            <input type="button" value={"Login"} className={logedIn ?'hidden me-10':'me-10 '}/>
-            <input type="button" value={"Logout"} className={!logedIn ?'hidden me-10':'me-10 '}/>
+        <div className='changareg text-xl'>
+            <input type="button" value={"Login"} className={logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'}/>
+            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} />
         </div>
       
     </div>
