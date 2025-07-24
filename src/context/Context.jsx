@@ -6,9 +6,9 @@ export const appContext = createContext();
 
 export const Context = ({children}) => {
 
-  
+  const [logedIn,setLogedIn]=useState(false)
 
-  const values ={};
+  const values ={logedIn,setLogedIn};
 
   
   return <appContext.Provider value={values}>
@@ -16,6 +16,8 @@ export const Context = ({children}) => {
   </appContext.Provider>
 }
 
-export const useAppContext = () =>{
+export  const useAppContext = () =>{
   return useContext(appContext);
 } 
+
+export default Context;
