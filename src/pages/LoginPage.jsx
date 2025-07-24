@@ -6,18 +6,21 @@ const LoginPage = () => {
   const {logedIn,setLogedIn,users} =useAppContext();
   const [email,setEmail] = useState("");
   const [password,setPass] = useState("");
+ 
 
   const login = () => {
-    users.map((data)=>{
-      let count = 0;
-      if(data.email==email && data.password==password){
-        alert("Success")
-        setLogedIn(true);
-        
-      }
-      
-    })
 
+    
+
+    const output = users.find((u)=>u.email === email && u.password === password);
+
+    if(output){
+      alert("success")
+    }else{
+      alert("fail")
+      setLogedIn(false);
+    }
+    
     
   }
 
