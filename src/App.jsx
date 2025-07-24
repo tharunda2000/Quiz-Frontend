@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Context from './context/Context'
 import HomePage from './pages/HomePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
 
 const App = () => {
 
@@ -10,6 +11,10 @@ const App = () => {
     {
       path:'/',
       element:<HomePage/>
+    },
+    {
+      path:'/login',
+      element:<LoginPage/>
     }
 
   ]);
