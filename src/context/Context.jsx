@@ -1,14 +1,29 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { createContext } from 'react'
+
 
 export const appContext = createContext();
 
 
 export const Context = ({children}) => {
 
-  const [logedIn,setLogedIn]=useState(false)
+  const [logedIn,setLogedIn]=useState(false);
+  const [users,setUsers]=useState([]);
 
-  const values ={logedIn,setLogedIn};
+  const values ={logedIn,setLogedIn,users,setUsers};
+
+  useEffect(()=>{
+    fetch(`http://localhost:9005/users`)
+      .then(res=>res.json())
+      .then(data=>{
+        setUsers(data);
+        console.log(users);
+      })
+      
+      
+      
+
+  },[]);
 
   
   return <appContext.Provider value={values}>
