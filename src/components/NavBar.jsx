@@ -12,7 +12,9 @@ const {logedIn,setLogedIn} =useAppContext();
     <div className='flex fixed bg-blue-200 w-screen h-25 justify-between items-center'>
         <img src={logo} className='w-20 ms-15' />
         <div className='flex gap-20 text-2xl'>
-            
+            <NavLink to={'/'}>Home</NavLink>
+            <NavLink to={'/'}>Quizes</NavLink>
+            <NavLink to={'/'}>About</NavLink>
 
         </div>
 
