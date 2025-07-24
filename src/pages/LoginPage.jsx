@@ -10,7 +10,7 @@ const LoginPage = () => {
             <input type="email" name="" id=""  placeholder='Enter your email' className='bg-white p-3 rounded-full w-100 h-15 px-10 changareg'/>
             <input type="password" name="" id=""  placeholder='Enter your password' className='bg-white p-3 rounded-full w-100 px-10 h-15 mt-10 changareg'/>
             <input type="button" value="Login" className='bg-blue-500 p-3 rounded-full w-100 px-10 h-15 mt-10 changareg text-3xl cursor-pointer hover:bg-blue-600' />
-            <NavLink to={'/'} className='text-blue-800 mt-10 changareg hover:text-blue-900 text-xl'>don't have an account</NavLink>   
+            <NavLink to={'/signup'} className='text-blue-800 mt-10 changareg hover:text-blue-900 text-xl'>don't have an account</NavLink>   
 
         </div>
       
