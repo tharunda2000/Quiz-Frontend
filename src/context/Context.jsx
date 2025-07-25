@@ -12,6 +12,7 @@ export const Context = ({children}) => {
   const [currentUser,setCurrentUser]=useState({});
 
   const values ={logedIn,setLogedIn,users,setUsers,currentUser,setCurrentUser};
+  
 
   useEffect(()=>{
     fetch(`http://localhost:9005/users`)
@@ -19,12 +20,15 @@ export const Context = ({children}) => {
       .then(data=>{
         setUsers(data);
         console.log(users);
-      })
+    })
       
       
       
 
   },[]);
+
+  
+
 
   
   return <appContext.Provider value={values}>
