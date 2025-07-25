@@ -13,6 +13,10 @@ const LoginPage = () => {
   const notifyLog = () => toast.success('Logged In', {
                           duration: 2000
                         })
+
+  const notifyFail = () => toast.error('Wrong email or password', {
+                          duration: 2000
+                        })
  
 
   const login = () => {
@@ -27,7 +31,7 @@ const LoginPage = () => {
       setLogedIn(true);
       navigate('/');
     }else{
-      alert("fail")
+      notifyFail();
       setLogedIn(false);
       
     }
