@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { NavLink,useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/Context'
+import toast, { Toaster } from 'react-hot-toast';
 
 const LoginPage = () => {
   const {logedIn,setLogedIn,users} =useAppContext();
   const [email,setEmail] = useState("");
   const [password,setPass] = useState("");
   const navigate = useNavigate();
+
+
+  const notifyLog = () => toast.success('Logged In', {
+                          duration: 2000
+                        })
  
 
   const login = () => {
@@ -16,7 +22,7 @@ const LoginPage = () => {
     const output = users.find((u)=>u.email === email && u.password === password);
 
     if(output){
-      alert("success")
+      notifyLog();
       setLogedIn(true);
       navigate('/');
     }else{

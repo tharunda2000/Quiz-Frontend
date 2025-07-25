@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import SignUp from './pages/SignUp'
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
 
@@ -26,7 +27,7 @@ const App = () => {
   
   return (
     <div>
-
+      <Toaster position="top-center" />
       <RouterProvider router={router}/>
 
       

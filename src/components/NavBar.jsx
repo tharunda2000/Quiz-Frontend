@@ -2,11 +2,20 @@ import React from 'react'
 import logo from '../assets/mainLogo.png'
 import { useAppContext } from '../context/Context'
 import { NavLink,useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const NavBar = () => {
 
 const {logedIn,setLogedIn} =useAppContext();
 const navigate = useNavigate();
+
+const notifyOut = () => toast.success('Logged Out', {
+                          duration: 2000
+                        })
+const logOutFunc = () =>{
+  setLogedIn(!logedIn);
+  notifyOut();
+}
 
 
   return (
@@ -21,7 +30,7 @@ const navigate = useNavigate();
 
         <div className='changareg text-xl'>
             <input type="button" value={"Login"} className={logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>navigate('/login')}/>
-            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>setLogedIn(!logedIn)} />
+            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>logOutFunc()} />
         </div>
       
     </div>
