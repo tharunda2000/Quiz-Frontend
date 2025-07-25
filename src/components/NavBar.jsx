@@ -37,7 +37,7 @@ const logOutFunc = () =>{
             <input type="button" value={"Logout"} className={!logedIn ?'hidden ':' bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>logOutFunc()} />
           </div>
           <div className='mt-3 changareg text-purple-900'>
-            Welcome {logedIn?currentUser.name:"guest"}
+            {logedIn?currentUser.name:"guest"}
           </div>
        </div> 
       

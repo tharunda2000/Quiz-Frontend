@@ -21,6 +21,9 @@ const SignUp = () => {
   const passLength = () => toast.error('Password should be atleast 8 characters', {
                           duration: 3000
                         })
+  const passMismatch = () => toast.error('Passwords does not match', {
+                          duration: 3000
+                        })
   
 
   const [newUser,setNewUser] = useState({
@@ -37,28 +40,35 @@ const SignUp = () => {
       
         if(newUser.name!="" && newUser.email!="" && newUser.password!=""){
           if(newUser.password.length>7){
-            fetch(`http://localhost:9005/user`,
-            {
-              method:"POST",
-              headers:{"Content-Type":"application/json"},
-              body:JSON.stringify(newUser)
-            }
-            ).then(res=>{
-            if(res.ok){
+            if(document.getElementById("pass1").value===document.getElementById("pass2").value){
+              fetch(`http://localhost:9005/user`,
+                {
+                  method:"POST",
+                  headers:{"Content-Type":"application/json"},
+                  body:JSON.stringify(newUser)
+                }
+                ).then(res=>{
+                if(res.ok){
 
-              fetch(`http://localhost:9005/users`)
-              .then(res=>res.json())
-              .then(data=>{
-                setUsers(data);
+                  fetch(`http://localhost:9005/users`)
+                  .then(res=>res.json())
+                  .then(data=>{
+                    setUsers(data);
+                  })
+
+                  success();
+                  navigate('/login')
+
+                }else{
+                  notifyFail();
+                }
               })
 
-              success();
-              navigate('/login')
-
             }else{
-              notifyFail();
+
+              passMismatch();
+
             }
-          })
           }else{
             passLength();
           }
@@ -81,8 +91,8 @@ const SignUp = () => {
             <h1 className='mt-10 mb-10 changareg text-6xl text-blue-900'>Signup</h1>
             <input type="email" name="" id="1"  placeholder='Enter your email' className='bg-white p-3 rounded-full w-100 h-15 px-10 changareg' onChange={(e)=>setNewUser({...newUser,email:e.target.value})}/>
             <input type="text" name="" id="2"  placeholder='Enter your user name' className='bg-white p-3 rounded-full w-100 h-15 px-10 changareg mt-10' onChange={(e)=>setNewUser({...newUser,name:e.target.value})}/>
-            <input type="password" name="" id="3"  placeholder='Enter your password' className='bg-white p-3 rounded-full w-100 px-10 h-15 mt-10 changareg'/>
-            <input type="password" name="" id="4"  placeholder='confirm your password' className='bg-white p-3 rounded-full w-100 px-10 h-15 mt-10 changareg' onChange={(e)=>setNewUser({...newUser,password:e.target.value})}/>
+            <input type="password" name="" id="pass1"  placeholder='Enter your password' className='bg-white p-3 rounded-full w-100 px-10 h-15 mt-10 changareg'/>
+            <input type="password" name="" id="pass2"  placeholder='confirm your password' className='bg-white p-3 rounded-full w-100 px-10 h-15 mt-10 changareg' onChange={(e)=>setNewUser({...newUser,password:e.target.value})}/>
             <input type="button" value="Signup" className='bg-blue-500 p-3 rounded-full w-100 px-10 h-15 mt-10 changareg text-3xl cursor-pointer hover:bg-blue-600' onClick={register}/>
             <NavLink to={'/login'} className='text-blue-800 mt-10 changareg hover:text-blue-900 text-xl'>already have an account</NavLink>   
 
