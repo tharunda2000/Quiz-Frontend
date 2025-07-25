@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const NavBar = () => {
 
-const {logedIn,setLogedIn} =useAppContext();
+const {logedIn,setLogedIn,currentUser} =useAppContext();
 const navigate = useNavigate();
 
 const notifyOut = () => toast.success('Logged Out', {
@@ -28,10 +28,16 @@ const logOutFunc = () =>{
 
         </div>
 
-        <div className='changareg text-xl'>
-            <input type="button" value={"Login"} className={logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>navigate('/login')}/>
-            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':'me-10 bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>logOutFunc()} />
-        </div>
+       <div className='flex flex-col items-end me-10'>
+
+          <div className='changareg text-xl'>
+            <input type="button" value={"Login"} className={logedIn ?'hidden ':' bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>navigate('/login')}/>
+            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':' bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>logOutFunc()} />
+          </div>
+          <div className='mt-3 changareg text-purple-900'>
+            Welcome {logedIn?currentUser.name:"guest"}
+          </div>
+       </div> 
       
     </div>
   )

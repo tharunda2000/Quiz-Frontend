@@ -4,7 +4,7 @@ import { useAppContext } from '../context/Context'
 import toast, { Toaster } from 'react-hot-toast';
 
 const LoginPage = () => {
-  const {logedIn,setLogedIn,users} =useAppContext();
+  const {logedIn,setLogedIn,users,setCurrentUser} =useAppContext();
   const [email,setEmail] = useState("");
   const [password,setPass] = useState("");
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ const LoginPage = () => {
     const output = users.find((u)=>u.email === email && u.password === password);
 
     if(output){
+      setCurrentUser(output);
       notifyLog();
       setLogedIn(true);
       navigate('/');
