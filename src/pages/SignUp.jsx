@@ -24,6 +24,9 @@ const SignUp = () => {
   const passMismatch = () => toast.error('Passwords does not match', {
                           duration: 3000
                         })
+  const userDuplicate = () => toast.error('Username or password already exist', {
+                          duration: 3000
+                        })
   
 
   const [newUser,setNewUser] = useState({
@@ -32,13 +35,15 @@ const SignUp = () => {
       password:""
   })
 
-   const {setUsers} =useAppContext();
-  
-
+   const {setUsers,users} =useAppContext();
 
   function register(){
-      
-        if(newUser.name!="" && newUser.email!="" && newUser.password!=""){
+
+    const checkDuplicate = users.find((user)=> user.email===newUser.email && user.name ===newUser.name);
+
+        if(!checkDuplicate){
+
+          if(newUser.name!="" && newUser.email!="" && newUser.password!=""){
           if(newUser.password.length>7){
             if(document.getElementById("pass1").value===document.getElementById("pass2").value){
               fetch(`http://localhost:9005/user`,
@@ -76,6 +81,12 @@ const SignUp = () => {
         }else{
           emptyField();
         }
+
+        }else{
+          userDuplicate();
+        }
+      
+        
       
     }
   
