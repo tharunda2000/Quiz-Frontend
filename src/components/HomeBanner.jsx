@@ -1,7 +1,19 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import banner from '../assets/banner.jpg'
+import { useAppContext } from '../context/Context'
 
 const HomeBanner = () => {
+
+  const {logedIn} =useAppContext();
+  const navigate = useNavigate();
+
+  let makeQuiz=()=>{
+
+    if(logedIn){
+
+    }
+
+  }
   return (
     <div className='flex mt-45 mx-30 absolute bg-gray-800 rounded-full pe-25 shadow-blue-300 shadow-xl'>
 
