@@ -7,7 +7,7 @@ const HomePage = () => {
 
     const {logedIn,setLogedIn} = useAppContext();
   return (
-    <div className='bg-blue-100 w-full h-screen'>
+    <div className=' w-full h-screen'>
         <NavBar/>
         <HomeBanner/>
       
