@@ -23,7 +23,7 @@ const logOutFunc = () =>{
         <img src={logo} className='w-35 ms-15' />
         <div className='flex gap-20 text-3xl text-blue-950 changareg text-shadow-lg '>
             <NavLink to={'/'} className='hover:text-blue-800'>Home</NavLink>
-            <NavLink to={'/'} className='hover:text-blue-800'>Quizes</NavLink>
+            <NavLink to={'/allQuizes'} className='hover:text-blue-800'>Quizes</NavLink>
             <NavLink to={'/'} className={logedIn?'hover:text-blue-800':'hidden'}>Dashboard</NavLink>
             <NavLink to={'/'} className='hover:text-blue-800'>About</NavLink>
             

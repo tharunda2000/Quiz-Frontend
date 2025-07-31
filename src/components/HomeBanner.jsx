@@ -7,13 +7,8 @@ const HomeBanner = () => {
   const {logedIn} =useAppContext();
   const navigate = useNavigate();
 
-  let makeQuiz=()=>{
+  let makeQuiz=()=>logedIn?navigate('/createQuiz'):navigate('/login');
 
-    if(logedIn){
-
-    }
-
-  }
   return (
     <div className='flex mt-45 mx-30 absolute bg-gray-800 rounded-full pe-25 shadow-blue-300 shadow-xl'>
 
@@ -32,8 +27,8 @@ const HomeBanner = () => {
 
         <div className='flex mt-20 gap-10 text-xl'>
 
-          <input type="button" value="Make Quiz" className='bg-blue-500 text-white p-5 rounded-2xl hover:animate-pulse w-40 cursor-pointer' />
-          <input type="button" value="Face Quiz" className='bg-green-500 text-white p-5 rounded-2xl hover:animate-pulse w-40 cursor-pointer' />
+          <input type="button" value="Make Quiz" className='bg-blue-500 text-white p-5 rounded-2xl hover:animate-pulse w-40 cursor-pointer' onClick={makeQuiz} />
+          <input type="button" value="Face Quiz" className='bg-green-500 text-white p-5 rounded-2xl hover:animate-pulse w-40 cursor-pointer' onClick={()=>navigate('/allQuizes')}  />
 
         </div>
 
