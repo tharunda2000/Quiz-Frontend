@@ -26,7 +26,7 @@ const SignUp = () => {
                         })
   const userDuplicate = () => toast.error('Username or password already exist', {
                           duration: 3000
-                        })
+                         })
   
 
   const [newUser,setNewUser] = useState({
