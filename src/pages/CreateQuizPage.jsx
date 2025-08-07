@@ -93,9 +93,11 @@ const CreateQuizPage = () => {
                 <option value="General Knowledge">General Knowledge</option>
                 <option value="Science & Technology">Science & Technology</option>
                 <option value="Mathematics">Mathematics</option>
+                <option value="Programming & IT">Programming & IT</option>
                 <option value="Language & Literature">Language & Literature</option>
                 <option value="History & Culture">History & Culture</option>
-                <option value="Entertainment & Sports">Entertainment & Sports</option>
+                <option value="Entertainment & Media">Entertainment & Media</option>
+                <option value="Sports & Games">Sports & Games</option>
               </select>
             </form>
             <input type="text" name="" id="" className='bg-white mt-10 h-10 rounded-lg w-50 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 px-5' placeholder='Duration in minutes' onChange={(e)=>setNewQuiz({...newQuiz,duration:e.target.value})}/>
