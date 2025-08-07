@@ -10,6 +10,7 @@ export const Context = ({children}) => {
   const [logedIn,setLogedIn]=useState(false);
   const [users,setUsers]=useState([]);
   const [currentUser,setCurrentUser]=useState({});
+  const [quizes,setQuizes] = useState([]);
 
   const values ={logedIn,setLogedIn,users,setUsers,currentUser,setCurrentUser};
   
