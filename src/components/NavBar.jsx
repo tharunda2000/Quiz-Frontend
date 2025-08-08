@@ -19,26 +19,25 @@ const logOutFunc = () =>{
 
 
   return (
-    <div className='flex fixed top-0 bg-blue-300 w-screen h-35 justify-between items-center shadow-lg'>
+    <div className='flex fixed top-0 bg-gradient-to-r from-indigo-500 to-purple-600 w-screen h-35 justify-between items-center shadow-lg shadow-purple-300'>
         <img src={logo} className='w-35 ms-15' />
-        <div className='flex gap-20 text-3xl text-blue-950 changareg text-shadow-lg '>
-            <NavLink to={'/'} className='hover:text-blue-800'>Home</NavLink>
-            <NavLink to={'/allQuizes'} className='hover:text-blue-800'>Quizes</NavLink>
-            <NavLink to={'/'} className={logedIn?'hover:text-blue-800':'hidden'}>Dashboard</NavLink>
-            <NavLink to={'/'} className='hover:text-blue-800'>About</NavLink>
+        <div className='flex gap-20 text-3xl text-white changareg text-shadow-lg '>
+            <NavLink to={'/'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>Home</NavLink>
+            <NavLink to={'/allQuizes'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>Quizes</NavLink>
+            <NavLink to={'/'} className={logedIn?'hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl':'hidden'}>Dashboard</NavLink>
+            <NavLink to={'/'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>About</NavLink>
             
 
         </div>
 
-       <div className='flex flex-col items-end me-10'>
+       <div className='flex  items-center me-10 justify-center'>
 
           <div className='changareg text-xl'>
-            <input type="button" value={"Login"} className={logedIn ?'hidden ':' bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>navigate('/login')}/>
-            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':' bg-blue-400 rounded-4xl p-2 w-30 h-13 hover:bg-blue-500 cursor-pointer'} onClick={()=>logOutFunc()} />
+            <input type="button" value={"Login"} className={logedIn ?'hidden ':' bg-white rounded-4xl p-2 w-30 h-13 hover:bg-black hover:text-white cursor-pointer'} onClick={()=>navigate('/login')}/>
+            <input type="button" value={"Logout"} className={!logedIn ?'hidden ':' bg-white rounded-4xl p-2 w-30 h-13 hover:bg-black hover:text-white cursor-pointer'} onClick={()=>logOutFunc()} />
           </div>
-          <div className='mt-3 changareg text-purple-900'>
-            {logedIn?currentUser.name:"guest"}
-          </div>
+          < i class="ri-account-circle-fill text-5xl ms-5"></i>
+
        </div> 
       
     </div>

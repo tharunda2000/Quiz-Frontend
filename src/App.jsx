@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp'
 import { Toaster } from 'react-hot-toast';
 import AllQuizesPage from './pages/AllQuizesPage'
 import CreateQuizPage from './pages/CreateQuizPage'
+import GeneralKnowledgePage from './pages/GeneralKnowledgePage'
 
 const App = () => {
 
@@ -32,6 +33,10 @@ const App = () => {
       path:'/createQuiz',
       element:<CreateQuizPage/>
     },
+    {
+      path:'/catagoty/general',
+      element:<GeneralKnowledgePage/>
+    }
 
   ]);
   
