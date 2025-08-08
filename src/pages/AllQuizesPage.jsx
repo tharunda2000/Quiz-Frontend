@@ -19,49 +19,60 @@ const AllQuizesPage = () => {
         <NavBar/>
         
 
-        <div className='grid grid-cols-4 mx-50 mt-65 ' id='allQuizes'>
+        <div className='grid grid-cols-4 mx-90 mt-85 ' id='allQuizes'>
 
           <div className='flex items-center justify-center cursor-pointer'>
 
-            <img src={general} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl   hover:opacity-50 ' />
-            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black]'>General Knowledge</h1>
+            <img src={general} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl shadow-2xl  hover:opacity-50 hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>General Knowledge</h1>
           </div>
 
-          <div className='flex items-center justify-center '>
+          <div className='flex items-center justify-center cursor-pointer'>
 
-            <img src={science} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50 ' />
-            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black]'>Science & Technology</h1>
-
-          </div>
-          <div>
-
-            <img src={maths} alt="" srcset="" className='w-70 h-60 rounded-4xl' />
+            <img src={science} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Science & Technology</h1>
 
           </div>
-          <div>
 
-            <img src={it} alt="" srcset="" className='w-70 h-60 rounded-4xl' />
+          <div className='flex items-center justify-center cursor-pointer'>
 
-          </div>
-          <div>
-
-            <img src={litarature} alt="" srcset="" className='w-70 h-60 rounded-4xl mt-15' />
+            <img src={maths} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Mathematics</h1>
 
           </div>
-          <div>
 
-            <img src={history} alt="" srcset="" className='w-70 h-60 rounded-4xl mt-15' />
+          <div className='flex items-center justify-center cursor-pointer'>
+
+            <img src={it} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Programming & IT</h1>
 
           </div>
-          <div>
 
-            <img src={media} alt="" srcset="" className='w-70 h-60 rounded-4xl mt-15' />
+          <div className='flex items-center justify-center mt-45 cursor-pointer'>
+
+            <img src={litarature} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Language & Literature</h1>
+
+          </div>
+
+          <div className='flex items-center justify-center mt-45 cursor-pointer'>
+
+            <img src={history} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>History & Culture</h1>
+
+          </div>
+
+          <div className='flex items-center justify-center mt-45 cursor-pointer'>
+
+            <img src={media} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Entertainment & Media</h1>
 
           </div>
           
-          <div>
+          <div className='flex items-center justify-center mt-45 cursor-pointer'>
 
-            <img src={sports} alt="" srcset="" className='w-70 h-60 rounded-4xl mt-15' />
+            <img src={sports} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50  shadow-2xl hover:shadow-blue-500' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black] text-center'>Sports & Games</h1>
 
           </div>
 
