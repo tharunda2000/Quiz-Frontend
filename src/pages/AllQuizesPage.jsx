@@ -12,41 +12,25 @@ import sports from '../assets/CatagoryPhotos/sports.jpg'
 
 const AllQuizesPage = () => {
 
-  useEffect(()=>{
-
-    let getAllQuizes = async () =>{
-      let res = await fetch("http://localhost:9005/allQuiz")
-      let data = await res.json();
-
-      console.log(data);
-    }
-
-    getAllQuizes();
-
-  },[])
+  
 
   return (
     <div>
         <NavBar/>
-        <div className='flex justify-between mt-50 mx-20 '>
-          <h1 className='text-3xl changareg text-shadow-lg '>all quizes</h1>
-          <div className='space-x-2'>
-            <input type="text" name="" id="" className='focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm border border-gray-300 rounded-full h-10 w-70 px-4' />
-            <input type="button" value="Search" className='bg-blue-300 rounded-full p-2 w-30 hover:bg-blue-400 cursor-pointer'/>
-          </div>
-        </div>
+        
 
-        <div className='grid grid-cols-4 mx-50 mt-10 ' id='allQuizes'>
+        <div className='grid grid-cols-4 mx-50 mt-65 ' id='allQuizes'>
 
-          <div>
+          <div className='flex items-center justify-center cursor-pointer'>
 
-            <img src={general} alt="" srcset="" className='w-70 h-60 rounded-4xl' />
-
+            <img src={general} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl   hover:opacity-50 ' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black]'>General Knowledge</h1>
           </div>
 
-          <div>
+          <div className='flex items-center justify-center '>
 
-            <img src={science} alt="" srcset="" className='w-70 h-60 rounded-4xl' />
+            <img src={science} alt="" srcset="" className='absolute w-70 h-60 rounded-4xl cursor-pointer  hover:opacity-50 ' />
+            <h1 className='relative w-50 text-4xl font-bold text-white  z-10  drop-shadow-[6px_6px_6px_black]'>Science & Technology</h1>
 
           </div>
           <div>
