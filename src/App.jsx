@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import AllQuizesPage from './pages/AllQuizesPage'
 import CreateQuizPage from './pages/CreateQuizPage'
 import GeneralKnowledgePage from './pages/GeneralKnowledgePage'
+import DashboardPage from './pages/DashboardPage'
 
 const App = () => {
 
@@ -36,6 +37,10 @@ const App = () => {
     {
       path:'/catagoty/general',
       element:<GeneralKnowledgePage/>
+    },
+    {
+      path:'/dashboard',
+      element:<DashboardPage/>
     }
 
   ]);
