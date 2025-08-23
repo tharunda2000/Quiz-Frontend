@@ -24,7 +24,7 @@ const logOutFunc = () =>{
         <div className='flex gap-20 text-3xl text-white changareg text-shadow-lg '>
             <NavLink to={'/'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>Home</NavLink>
             <NavLink to={'/allQuizes'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>Quizes</NavLink>
-            <NavLink to={'/'} className={logedIn?'hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl':'hidden'}>Dashboard</NavLink>
+            <NavLink to={'/dashboard'} className={logedIn?'hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl':'hidden'}>Dashboard</NavLink>
             <NavLink to={'/'} className='hover:text-shadow-purple-300 hover:text-shadow-xs hover:text-4xl'>About</NavLink>
             
 
